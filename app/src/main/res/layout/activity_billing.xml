@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -58,13 +59,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="IN Time:" />
+
+                android:text="OUT Time:" />
 
             <TextView
                 android:id="@+id/outTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontWeight="700"
                 android:text="Time" />
         </LinearLayout>
 
@@ -87,6 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textSize="20sp"
                 android:text="Bill Amount" />
         </LinearLayout>
     </LinearLayout>

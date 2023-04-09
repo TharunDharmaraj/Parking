@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "357031153418",
+    "project_id": "park-x-4485e",
+    "storage_bucket": "park-x-4485e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357031153418:android:b48b1824cbbf7c05d974f3",
+        "android_client_info": {
+          "package_name": "com.example.parking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357031153418-vndgovkj9u6mvdhjavkanmcctdl4lo9b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOcPwFMZLr73sOxW4U9EiK6oZeu5Hov_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357031153418-mbughqomddvqrffcjohma9qfq7oeink4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357031153418:android:cfce76e658491ceed974f3",
+        "android_client_info": {
+          "package_name": "com.example.parkingApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357031153418-vndgovkj9u6mvdhjavkanmcctdl4lo9b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOcPwFMZLr73sOxW4U9EiK6oZeu5Hov_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357031153418-mbughqomddvqrffcjohma9qfq7oeink4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

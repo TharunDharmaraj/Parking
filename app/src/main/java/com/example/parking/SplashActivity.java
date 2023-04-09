@@ -17,7 +17,6 @@ public class SplashActivity extends AppCompatActivity {
 
         Thread splashThread = new Thread() {
             int wait = 0;
-
             @Override
             public void run() {
                 try {
@@ -34,7 +33,5 @@ public class SplashActivity extends AppCompatActivity {
             }
         };
         splashThread.start();
-
-
     }
 }
