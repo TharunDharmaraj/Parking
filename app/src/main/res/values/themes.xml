@@ -65,7 +65,4 @@
         <item name="android:fontFamily">@font/montserrat</item>
     </style>
 
-<!--    <style name="spinnerStyle" parent="IoTParkingApp">-->
-<!--        <item name="android:background">@drawable/bg_spinner</item>-->
-<!--    </style>-->
 </resources>

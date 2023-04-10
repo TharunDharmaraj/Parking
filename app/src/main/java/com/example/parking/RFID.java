@@ -36,12 +36,12 @@ public class RFID extends AppCompatActivity  implements AdapterView.OnItemSelect
         assert actionBar != null;
         actionBar.setTitle("RFID");
         btn = findViewById(R.id.button2);
-        Spinner spin = (Spinner) findViewById(R.id.spinner);
-        spin.setOnItemSelectedListener(this);
+        rfid1.add("RFID");
+
+        //Creating the ArrayAdapter instance having the country list
+
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
-        // Obtain a reference to the "RFID" collection
         CollectionReference rfidCollectionRef = firestore.collection("RFIDS");
-        // Query all documents in the "RFID" collection
         rfidCollectionRef.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -57,18 +57,23 @@ public class RFID extends AppCompatActivity  implements AdapterView.OnItemSelect
                 Log.d("TimeTAG", "Error getting document: " + e);
             }
         });
-
-        //Creating the ArrayAdapter instance having the country list
         ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,rfid1);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        int spinnerPosition = aa.getPosition("RFID1");
+        Spinner spin = (Spinner) findViewById(R.id.spinner);
+        spin.setOnItemSelectedListener(this);
+
+        int spinnerPosition = aa.getPosition("RFID");
         spin.setSelection(spinnerPosition);
+        Log.d("TEZT",spinnerPosition+"Thirumalai");
+
         //Setting the ArrayAdapter data on the Spinner
         spin.setAdapter(aa);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),Slots.class);
+                Log.d("TEZT",selected);
                 i.putExtra("rfid",selected);
                 startActivity(i);
             }
@@ -76,8 +81,10 @@ public class RFID extends AppCompatActivity  implements AdapterView.OnItemSelect
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
+        public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
+        Log.d("TEZT","Inside OnItemSelected");
         selected = rfid1.get(position);
+        Toast.makeText(getApplicationContext(),selected,Toast.LENGTH_SHORT).show();
     }
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {
