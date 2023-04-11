@@ -34,9 +34,28 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/hoursSpent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:text="Total Hours:" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
                 android:text="IN Time:" />
 
             <TextView
@@ -44,6 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="Time" />
         </LinearLayout>
 
@@ -59,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-
+                android:gravity="right"
                 android:text="OUT Time:" />
 
             <TextView
@@ -67,6 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:fontWeight="700"
                 android:text="Time" />
         </LinearLayout>
@@ -83,6 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="right"
                 android:text="Your Bill:" />
 
             <TextView
@@ -91,6 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20sp"
+                android:gravity="center"
                 android:text="Bill Amount" />
         </LinearLayout>
     </LinearLayout>

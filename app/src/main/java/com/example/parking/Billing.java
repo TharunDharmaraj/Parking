@@ -22,6 +22,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Billing extends AppCompatActivity {
@@ -41,6 +44,7 @@ public class Billing extends AppCompatActivity {
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
         TextView innTime = findViewById(R.id.inTime);
         TextView outtTime = findViewById(R.id.outTime);
+        TextView hoursSpent = findViewById(R.id.hoursSpent);
         CollectionReference usersRef = firestore.collection("RFIDS");
 
         DocumentReference rfidDocRef = usersRef.document(rfid);
@@ -53,8 +57,10 @@ public class Billing extends AppCompatActivity {
                     String outTime = documentSnapshot.getString("OutTime");
                     innTime.setText(inTime);
                     outtTime.setText(outTime);
+
                     // Parse the inTime and outTime strings into Date objects
                     DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss dd MM yyyy");
+
                     Date inTimeDate = null;
                     try {
                         inTimeDate = dateFormat.parse(inTime);
@@ -71,6 +77,8 @@ public class Billing extends AppCompatActivity {
                     double billPerHour = 05.0; // change this to the rate you want to charge per minute
                     double totalBill = (timeInside / 60000.0) * billPerHour; // convert milliseconds to minutes
                     TextView Bill = findViewById(R.id.yourBill);
+                    long hours = (long) timeInside / 3600000;
+                    hoursSpent.setText(Long.toString(hours)+" Hours spent");
                     Bill.setText(String.valueOf(totalBill));
                 } else {
                     Log.d("TimeTAG", "No such document");

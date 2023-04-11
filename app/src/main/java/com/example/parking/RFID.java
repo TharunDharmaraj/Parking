@@ -36,10 +36,8 @@ public class RFID extends AppCompatActivity  implements AdapterView.OnItemSelect
         assert actionBar != null;
         actionBar.setTitle("RFID");
         btn = findViewById(R.id.button2);
-        rfid1.add("RFID");
-
+        rfid1.add("Choose RFID");
         //Creating the ArrayAdapter instance having the country list
-
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
         CollectionReference rfidCollectionRef = firestore.collection("RFIDS");
         rfidCollectionRef.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -84,7 +82,7 @@ public class RFID extends AppCompatActivity  implements AdapterView.OnItemSelect
         public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
         Log.d("TEZT","Inside OnItemSelected");
         selected = rfid1.get(position);
-        Toast.makeText(getApplicationContext(),selected,Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(),selected,Toast.LENGTH_SHORT).show();
     }
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {

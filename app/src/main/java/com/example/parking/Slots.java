@@ -38,6 +38,45 @@ public class Slots extends AppCompatActivity {
 
         // Get a reference to the Firebase Firestore database
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+        final int[] slott = new int[1];
+        String rfid = bundle.getString("rfid");
+        System.out.println("RFIDDD"+rfid);
+        final CollectionReference[] usersRef = {db.collection("RFIDS")};
+        DocumentReference rfidDocRef = usersRef[0].document(rfid);
+        rfidDocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    String slotNumber1 = documentSnapshot.getString("slot");
+                    TextView tv = findViewById(R.id.textView);
+                    tv.setText("SLOT" + slotNumber1);
+                    slott[0] = Integer.parseInt(slotNumber1);
+                    ImageView slot1 = findViewById(R.id.slot1);
+                    ImageView slot2 = findViewById(R.id.slot2);
+                    ImageView slot3 = findViewById(R.id.slot3);
+                    ImageView slot4 = findViewById(R.id.slot4);
+                    if(slott[0] == 1){
+                        slot1.setImageResource(R.drawable.car_yours);
+                    }else if(slott[0] ==2){
+                        slot2.setImageResource(R.drawable.car_yours);
+                    }else if(slott[0] ==3){
+                        slot3.setImageResource(R.drawable.car_yours);
+                    }else if(slott[0] ==4){
+                        slot4.setImageResource(R.drawable.car_yours);
+                    }
+                    System.out.println(slott[0]+"BOOKED");
+                    Log.d("BOOKED",slotNumber1);
+                } else {
+                    Log.d("NewTimeTAG", "No such document");
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("TimeTAG", "Error getting document: " + e);
+            }
+        });
+
 
 // Get a reference to the "RFID" collection
         CollectionReference rfidCollectionRef = db.collection("RFIDS");
@@ -61,13 +100,13 @@ public class Slots extends AppCompatActivity {
                                     ImageView slot2 = findViewById(R.id.slot2);
                                     ImageView slot3 = findViewById(R.id.slot3);
                                     ImageView slot4 = findViewById(R.id.slot4);
-                                    if(slot == 1){
+                                    if(slot == 1 && slot != slott[0]){
                                         slot1.setImageResource(R.drawable.car_occupied);
-                                    }else if(slot ==2){
+                                    }else if(slot ==2 && slot != slott[0]){
                                         slot2.setImageResource(R.drawable.car_occupied);
-                                    }else if(slot ==3){
+                                    }else if(slot ==3 && slot != slott[0]){
                                         slot3.setImageResource(R.drawable.car_occupied);
-                                    }else if(slot ==4){
+                                    }else if(slot ==4 && slot != slott[0]){
                                         slot4.setImageResource(R.drawable.car_occupied);
                                     }
                                     Log.d("slots",Integer.toString(slot));
@@ -86,44 +125,6 @@ public class Slots extends AppCompatActivity {
                     // Handle errors
                     Log.d("TAG", "Error getting documents: ", task.getException());
                 }
-            }
-        });
-        String rfid = bundle.getString("rfid");
-        System.out.println("RFIDDD"+rfid);
-
-        CollectionReference usersRef = db.collection("RFIDS");
-        DocumentReference rfidDocRef = usersRef.document(rfid);
-        rfidDocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                if (documentSnapshot.exists()) {
-                    String slotNumber = documentSnapshot.getString("slot");
-                    TextView tv = findViewById(R.id.textView);
-                    tv.setText("SLOT" + slotNumber);
-                    int slot = Integer.parseInt(slotNumber);
-                    ImageView slot1 = findViewById(R.id.slot1);
-                    ImageView slot2 = findViewById(R.id.slot2);
-                    ImageView slot3 = findViewById(R.id.slot3);
-                    ImageView slot4 = findViewById(R.id.slot4);
-                    if(slot == 1){
-                        slot1.setImageResource(R.drawable.car_yours);
-                    }else if(slot ==2){
-                        slot2.setImageResource(R.drawable.car_yours);
-                    }else if(slot ==3){
-                        slot3.setImageResource(R.drawable.car_yours);
-                    }else if(slot ==4){
-                        slot4.setImageResource(R.drawable.car_yours);
-                    }
-                    System.out.println(slot+"BOOKED");
-                    Log.d("BOOKED",slotNumber);
-                } else {
-                    Log.d("NewTimeTAG", "No such document");
-                }
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.d("TimeTAG", "Error getting document: " + e);
             }
         });
         assert actionBar != null;
