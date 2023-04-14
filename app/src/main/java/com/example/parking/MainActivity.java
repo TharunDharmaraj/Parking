@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() { // Function runs every MINUTES minutes.
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "0").setContentTitle("Next Hour").setContentText("MOBILE LAB");
-                builder.setSmallIcon(R.drawable.home);
+                builder.setSmallIcon(R.drawable.ic_launcher_foreground);
                 NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 NotificationChannel mChannel = null;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
