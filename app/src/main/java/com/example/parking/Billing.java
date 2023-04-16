@@ -30,7 +30,7 @@ import java.util.Date;
 public class Billing extends AppCompatActivity {
 
     Button btn;
-
+    String inTime, outTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,10 +53,18 @@ public class Billing extends AppCompatActivity {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if (documentSnapshot.exists()) {
-                    String inTime = documentSnapshot.getString("InTime");
-                    String outTime = documentSnapshot.getString("OutTime");
-                    innTime.setText(inTime);
-                    outtTime.setText(outTime);
+                    if(rfid.equals("RFID1")){
+                        inTime = bundle.getString("InTime");
+                        outTime = bundle.getString("OutTime");
+                        innTime.setText(inTime);
+                        outtTime.setText(outTime);
+                    }
+                    else{
+                        String inTime = documentSnapshot.getString("InTime");
+                        String outTime = documentSnapshot.getString("OutTime");
+                        innTime.setText(inTime);
+                        outtTime.setText(outTime);
+                    }
 
                     // Parse the inTime and outTime strings into Date objects
                     DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss dd MM yyyy");
@@ -93,6 +101,9 @@ public class Billing extends AppCompatActivity {
         Log.d("TimeTAG", "Document reference: " + rfidDocRef.getPath());
         Log.d("TimeTAG", "InTime TextView found: " + (innTime != null));
         Log.d("TimeTAG", "OutTime TextView found: " + (outtTime != null));
+
+
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
