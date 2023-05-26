@@ -39,6 +39,9 @@
         android:text="Shylander is a skilled communicator and relationship-builder, who excels at navigating complex stakeholder dynamics. He has a natural ability to connect with people and build trust, which has helped to build strong partnerships across the project team and beyond."
         android:textColor="@color/white"
         android:textSize="20sp"
+        android:padding="20dp"
+        android:justificationMode="inter_word"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"

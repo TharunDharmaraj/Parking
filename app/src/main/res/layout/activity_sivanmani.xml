@@ -39,6 +39,9 @@
         android:gravity="center_vertical|center_horizontal"
         android:text="Sivanmani is a highly results-driven strategist, with a track record of delivering successful projects on time and within budget. He has a keen understanding of what it takes to get things done, and his ability to prioritize and execute on key tasks is an important contributor to the team's success."
         android:textColor="@color/white"
+        android:padding="20dp"
+        android:justificationMode="inter_word"
+
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

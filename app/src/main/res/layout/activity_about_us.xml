@@ -38,6 +38,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:justificationMode="inter_word"
+
         android:gravity="center_vertical|center_horizontal"
         android:text="Park - X is an android application that helps users find out the free parking slots in a parking lot and also locate their parked car inside that lot. It is created byTeam Binary."
         android:textColor="@color/white"

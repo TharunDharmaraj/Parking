@@ -40,6 +40,8 @@
         android:text="Tharun is a highly analytical member of the project team, who excels at collecting and analyzing data to drive decision-making. He has a keen eye for detail, and his ability to break down complex problems into manageable tasks makes him an invaluable asset to the team. "
         android:textColor="@color/white"
         android:textSize="20sp"
+        android:padding="20dp"
+        android:justificationMode="inter_word"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

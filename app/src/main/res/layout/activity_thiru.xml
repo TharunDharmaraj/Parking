@@ -37,6 +37,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
+        android:justificationMode="inter_word"
+        android:padding="20dp"
         android:text="Thirumalai is a creative and enthusiastic problem solver, who brings a fresh perspective to the project team. His willingness to explore new approaches and embrace innovation has proven to be a valuable asset in the face of complex challenges. "
         android:textColor="@color/white"
         android:textSize="20sp"
