@@ -36,8 +36,8 @@
         app:layout_constraintVertical_bias="0.333" />
 
     <TextView
-        android:layout_width="308dp"
-        android:layout_height="225dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
         android:text="Park - X is an android application that helps users find out the free parking slots in a parking lot and also locate their parked car inside that lot. It is created byTeam Binary."
         android:textColor="@color/white"
@@ -45,7 +45,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tharun"
         app:layout_constraintVertical_bias="0.402" />
